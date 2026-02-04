@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>IÜ Place</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div id="login-screen">
+        <div class="login-box">
+            <div class="login-logo">IÜ PLACE</div>
+            
+            <div id="step-email">
+                <div class="input-group">
+                    <label>Öğrenci Maili</label>
+                    <input type="email" id="email-input" placeholder="ogrenci@ogr.iu.edu.tr">
+                </div>
+                <div class="input-group">
+                    <label>Bölüm</label>
+                    <select id="dept-input">
+                        <option value="" disabled selected>Bölüm Seçiniz</option>
+                        <option value="Matematik">Matematik</option>
+                        <option value="Hukuk">Hukuk</option>
+                        <option value="Bilgisayar">Bilgisayar</option>
+                        <option value="Tıp">Tıp</option>
+                        <option value="İşletme">İşletme</option>
+                    </select>
+                </div>
+                <button id="btn-send-code" class="login-btn">KOD GÖNDER</button>
+            </div>
+
+            <div id="step-code" class="hidden">
+                <div class="input-group">
+                    <label>Doğrulama Kodu</label>
+                    <input type="text" id="code-input" placeholder="123456" style="text-align:center; letter-spacing:5px; font-weight:800;">
+                </div>
+                <button id="btn-verify" class="login-btn">GİRİŞ YAP</button>
+                <button id="btn-back" class="login-btn" style="background:transparent; border:1px solid #444; color:#888;">GERİ DÖN</button>
+            </div>
+
+            <div id="login-msg" class="msg-text"></div>
+        </div>
+    </div>
+
+    <div id="game-ui" class="hidden">
+        
+        <div id="top-bar">
+            <div class="app-logo">IÜ PLACE</div>
+            
+            <div class="status-badge">
+                <div id="user-info">Misafir</div>
+                <div id="connection-status" style="margin-left:8px; color:#00FF00; font-size:12px;">●</div>
+            </div>
+        </div>
+
+        <div id="cooldown-toast" class="toast hidden">
+            <span class="material-icons-round">timer</span>
+            <span id="timer-text">05</span>
+        </div>
+
+        <div id="bottom-panel" class="closed">
+            <div class="color-grid">
+                <div class="color-btn active" style="background:#000000" data-color="#000000"></div>
+                <div class="color-btn" style="background:#FFFFFF" data-color="#FFFFFF"></div>
+                <div class="color-btn" style="background:#FF4500" data-color="#FF4500"></div>
+                <div class="color-btn" style="background:#FFA800" data-color="#FFA800"></div>
+                <div class="color-btn" style="background:#FFD635" data-color="#FFD635"></div>
+                <div class="color-btn" style="background:#00A368" data-color="#00A368"></div>
+                <div class="color-btn" style="background:#3690EA" data-color="#3690EA"></div>
+                <div class="color-btn" style="background:#2450A4" data-color="#2450A4"></div>
+                <div class="color-btn" style="background:#811E9F" data-color="#811E9F"></div>
+                <div class="color-btn" style="background:#B44AC0" data-color="#B44AC0"></div>
+                <div class="color-btn" style="background:#FF99AA" data-color="#FF99AA"></div>
+                <div class="color-btn" style="background:#9C6926" data-color="#9C6926"></div>
+            </div>
+
+            <div class="action-buttons">
+                <button id="btn-cancel" class="btn cancel">İPTAL</button>
+                <button id="btn-confirm" class="btn confirm">BOYA</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
